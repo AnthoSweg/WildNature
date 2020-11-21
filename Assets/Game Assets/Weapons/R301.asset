@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5273ce280642d064195302311394d684, type: 3}
+  m_Name: R301
+  m_EditorClassIdentifier: 
+  dmg: 2
+  fireRate: 50
+  reloadingTime: 0.8
+  maxAmmo: 45
+  spray: 1.84
+  ammoPrefab: {fileID: 1089328466063775817, guid: c1cea09399a462d4b8cb1237dea55098,
+    type: 3}
+  ammoSpeed: 25
+  ammoSize: 0.05
+  burst: 0
+  ammoPerShot: 1
+  currentAmmo: 29
+  shootTimer: -0.0017383003
+  reloadTimer: 0
