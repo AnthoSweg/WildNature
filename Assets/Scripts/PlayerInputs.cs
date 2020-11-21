@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerInputs : MonoBehaviour
+public class PlayerInputs : NetworkBehaviour
 {
     public float Horizontal { get; private set; }
     public float Vertical { get; private set; }
@@ -38,18 +39,21 @@ public class PlayerInputs : MonoBehaviour
 
     private void Update()
     {
-        Horizontal = Input.GetAxis(horizontalAxis);
-        Vertical = Input.GetAxis(verticalAxis);
+        if (isLocalPlayer)
+        {
+            Horizontal = Input.GetAxis(horizontalAxis);
+            Vertical = Input.GetAxis(verticalAxis);
 
-        InteractIsPressed = false;
-        InteractIsReleased = false;
-        FireIsPressed = false;
-        FireIsReleased = false;
+            InteractIsPressed = false;
+            InteractIsReleased = false;
+            FireIsPressed = false;
+            FireIsReleased = false;
 
-        if (Input.GetButtonDown(interactButton))    InteractIsPressed = true;
-        if (Input.GetButtonDown(fireButton))        FireIsPressed = true;
-        if (Input.GetButtonUp(interactButton))      InteractIsReleased = true;
-        if (Input.GetButtonUp(fireButton))          FireIsReleased = true;
+            if (Input.GetButtonDown(interactButton)) InteractIsPressed = true;
+            if (Input.GetButtonDown(fireButton)) FireIsPressed = true;
+            if (Input.GetButtonUp(interactButton)) InteractIsReleased = true;
+            if (Input.GetButtonUp(fireButton)) FireIsReleased = true;
+        }
     }
 }
 
